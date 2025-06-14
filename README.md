@@ -25,7 +25,7 @@ Conteinerização: Docker + Docker Compose
 ## ⚙️ Instalação
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/livraria-dti.git
+git clone https://github.com/felipebrazao/livraria-dti.git
 cd livraria-dti
 ```
 2. Instale as dependências:
