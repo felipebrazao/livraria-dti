@@ -1,4 +1,3 @@
-# menu.py
 from livro import Livro, Livraria
 
 def input_obrigatorio(mensagem):
@@ -6,14 +5,14 @@ def input_obrigatorio(mensagem):
         valor = input(mensagem).strip()
         if valor:
             return valor
-        print("⚠️ Este campo é obrigatório. Tente novamente.")
+        print("Este campo é obrigatório. Tente novamente.")
 
 def input_inteiro(mensagem):
     while True:
         valor = input(mensagem).strip()
         if valor.isdigit() and int(valor) > 0:
             return int(valor)
-        print("⚠️ Insira um número inteiro positivo.")
+        print("Insira um número inteiro positivo.")
 
 def input_data(mensagem):
     while True:
@@ -22,7 +21,7 @@ def input_data(mensagem):
             datetime.strptime(valor, "%Y-%m-%d")
             return valor
         except ValueError:
-            print("⚠️ Data inválida! Use o formato YYYY-MM-DD.")
+            print("Data inválida! Use o formato YYYY-MM-DD.")
 
 def obter_livro_input(padrao=None):
     if padrao:
@@ -43,7 +42,7 @@ def obter_livro_input(padrao=None):
     return Livro(titulo, autor, editora, paginas, descricao, data_publicacao)
 
 def mostrar_menu():
-    print("\n📚 MENU LIVRARIA")
+    print("\nMENU LIVRARIA")
     print("1. Cadastrar livro")
     print("2. Listar livros")
     print("3. Buscar por ID")
@@ -66,31 +65,31 @@ def main():
             livros = sistema.listar()
             if livros:
                 for l in livros:
-                    print(f"\n🆔 ID: {l[0]}")
-                    print(f"📖 Título: {l[1]}")
-                    print(f"👤 Autor: {l[2]}")
-                    print(f"🏢 Editora: {l[3] or 'Não informado'}")
-                    print(f"📄 Páginas: {l[4]}")
-                    print(f"📝 Descrição: {l[5] or 'Não informado'}")
-                    print(f"📆 Publicado em: {l[6]}")
+                    print(f"\nID: {l[0]}")
+                    print(f"Título: {l[1]}")
+                    print(f"Autor: {l[2]}")
+                    print(f"Editora: {l[3] or 'Não informado'}")
+                    print(f"Páginas: {l[4]}")
+                    print(f"Descrição: {l[5] or 'Não informado'}")
+                    print(f"Publicado em: {l[6]}")
             else:
-                print("📭 Nenhum livro cadastrado.\n")
+                print("Nenhum livro cadastrado.\n")
 
         elif escolha == '3':
             id = input("Digite o ID do livro: ")
             if id.isdigit():
                 livro = sistema.buscar_por_id(id)
                 if livro:
-                    print(f"\n📖 Título: {livro[1]}")
-                    print(f"👤 Autor: {livro[2]}")
-                    print(f"🏢 Editora: {livro[3] or 'Não informado'}")
-                    print(f"📄 Páginas: {livro[4]}")
-                    print(f"📝 Descrição: {livro[5] or 'Não informado'}")
-                    print(f"📆 Publicado em: {livro[6]}")
+                    print(f"\nTítulo: {livro[1]}")
+                    print(f"Autor: {livro[2]}")
+                    print(f"Editora: {livro[3] or 'Não informado'}")
+                    print(f"Páginas: {livro[4]}")
+                    print(f"Descrição: {livro[5] or 'Não informado'}")
+                    print(f"Publicado em: {livro[6]}")
                 else:
-                    print("❌ Livro não encontrado.\n")
+                    print("Livro não encontrado.\n")
             else:
-                print("⚠️ ID inválido.\n")
+                print("ID inválido.\n")
 
         elif escolha == '4':
             id = input("Digite o ID do livro a atualizar: ")
@@ -101,9 +100,9 @@ def main():
                     livro = obter_livro_input(atual)
                     sistema.atualizar(id, livro)
                 else:
-                    print("❌ Livro não encontrado.\n")
+                    print("Livro não encontrado.\n")
             else:
-                print("⚠️ ID inválido.\n")
+                print("ID inválido.\n")
 
         elif escolha == '5':
             id = input("Digite o ID do livro a deletar: ")
@@ -111,17 +110,17 @@ def main():
                 id_int = int(id)
                 if sistema.buscar_por_id(id_int):
                      sistema.deletar(id_int)
-                     print("✅ Livro deletado com sucesso!\n")
+                     print("Livro deletado com sucesso!\n")
                 else:
-                    print("❌ Livro não encontrado.\n")  
+                    print("Livro não encontrado.\n")  
             else:
-                print("⚠️ ID inválido.\n")       
+                print("ID inválido.\n")       
         elif escolha == '6':
-            print("👋 Saindo do sistema...")
+            print("Saindo do sistema...")
             sistema.fechar()
             break
         else:
-            print("⚠️ Opção inválida. Escolha de 1 a 6.\n")
+            print("Opção inválida. Escolha de 1 a 6.\n")
 
 if __name__ == "__main__":
     from datetime import datetime

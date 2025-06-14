@@ -1,4 +1,3 @@
-# livro.py
 import sqlite3
 from datetime import datetime
 
@@ -41,9 +40,9 @@ class Livraria:
                 VALUES (?, ?, ?, ?, ?, ?)
             ''', (livro.titulo, livro.autor, livro.editora, livro.paginas, livro.descricao, livro.data_publicacao))
             self.conn.commit()
-            print("✅ Livro adicionado com sucesso!\n")
+            print("Livro adicionado com sucesso!\n")
         except ValueError as e:
-            print(f"❌ Erro ao adicionar livro: {e}\n")
+            print(f"Erro ao adicionar livro: {e}\n")
             raise
 
     def listar(self):
@@ -63,9 +62,9 @@ class Livraria:
                 WHERE id=?
             ''', (livro.titulo, livro.autor, livro.editora, livro.paginas, livro.descricao, livro.data_publicacao, id))
             self.conn.commit()
-            print("✅ Livro atualizado com sucesso!\n")
+            print("Livro atualizado com sucesso!\n")
         except ValueError:
-            print("❌ Data inválida! Use o formato YYYY-MM-DD.\n")
+            print("Data inválida! Use o formato YYYY-MM-DD.\n")
 
     def deletar(self, id):
         try:
@@ -74,12 +73,12 @@ class Livraria:
              
             self.cursor.execute("SELECT * FROM livro WHERE id=?", (id,))
             if self.cursor.fetchone() is None:     
-                print(f"❌ Nenhum livro encontrado com o ID {id}.\n")
+                print(f"Nenhum livro encontrado com o ID {id}.\n")
                 return
             self.cursor.execute("DELETE FROM livro WHERE id=?", (id,))
             self.conn.commit()
         except ValueError as e:
-            print(f"❌ Erro ao deletar livro: {e}\n")
+            print(f"Erro ao deletar livro: {e}\n")
 
     def fechar(self):
         self.conn.close()

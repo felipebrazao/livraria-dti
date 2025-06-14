@@ -1,4 +1,3 @@
-# test_livro.py
 import os
 import pytest
 from livro import Livro, Livraria
@@ -53,22 +52,21 @@ def test_deletar_livro(banco_teste):
     assert banco_teste.buscar_por_id(livro_id) is None
 
 def test_adicionar_paginas_invalidas(banco_teste):
-    with pytest.raises(ValueError):  # simularemos erro manualmente
-        livro = Livro("Erro Páginas", "Autor", "", "cem", "", "2023-01-01")  # "cem" é string
+    with pytest.raises(ValueError):  
+        livro = Livro("Erro Páginas", "Autor", "", "cem", "", "2023-01-01")  
         banco_teste.adicionar(livro)
 
 def test_adicionar_data_mal_formatada(banco_teste):
-    livro = Livro("Erro Data", "Autor", "", 100, "", "31-12-2023")  # formato errado
+    livro = Livro("Erro Data", "Autor", "", 100, "", "31-12-2023")  
 
     with pytest.raises(ValueError):
      banco_teste.adicionar(livro)
      resultado = banco_teste.buscar_por_id(1)
-     assert resultado is None  # Deve falhar o insert e não salvar nada
+     assert resultado is None  
 
 def test_buscar_id_inexistente(banco_teste):
     resultado = banco_teste.buscar_por_id(999)
     assert resultado is None
 
 def test_deletar_id_inexistente(banco_teste):
-    # Tentar deletar um ID que não existe
-    banco_teste.deletar(999)  # Não deve dar erro    
+    banco_teste.deletar(999)   
