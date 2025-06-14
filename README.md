@@ -1,7 +1,7 @@
-##📚 Livraria DTI
+# Livraria DTI
 Este projeto é uma aplicação em Python com SQLite para gerenciar um acervo de livros. Ele permite cadastrar, listar, buscar, atualizar e remover livros via terminal, com suporte a testes automatizados e conteinerização com Docker.
 
-##🧩 Recurso: Livro
+## 🧩 Recurso: Livro
 A aplicação trabalha com o recurso Livro, que possui as seguintes propriedades:
 
 | Propriedade       | Tipo  | Obrigatória? | Descrição                         |
@@ -13,7 +13,7 @@ A aplicação trabalha com o recurso Livro, que possui as seguintes propriedades
 | `descricao`       | `str` | Não          | Breve descrição                   |
 | `data_publicacao` | `str` | Sim          | Data de publicação (`YYYY-MM-DD`) |
 
-##🛠️ Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 Linguagem: Python 3.10+
 
 Banco de dados: SQLite
@@ -22,7 +22,7 @@ Testes: Pytest
 
 Conteinerização: Docker + Docker Compose
 
-##⚙️ Instalação
+## ⚙️ Instalação
 1. Clone o repositório:
 ```bash
 git clone https://github.com/seu-usuario/livraria-dti.git
@@ -32,7 +32,7 @@ cd livraria-dti
 pip install -r requirements.txt
 Apenas a biblioteca pytest é necessária para os testes. As demais dependências listadas no requirements.txt são genéricas para projetos web e não são utilizadas diretamente neste CLI.
 
-##▶️ Como Executar a Aplicação
+## ▶️ Como Executar a Aplicação
 Execute o menu interativo com:
 
 ```bash
@@ -50,7 +50,7 @@ Deletar livro: Remove um livro pelo ID.
 
 Sair: Fecha a conexão com o banco.
 
-##🧪 Testes Unitários
+## 🧪 Testes Unitários
 Os testes estão definidos no arquivo test_livro.py utilizando o framework pytest.
 
 Para rodar os testes:
@@ -65,7 +65,7 @@ Validação de data e número de páginas
 
 Comportamento com dados inválidos e IDs inexistentes
 
-##🐳 Conteinerização com Docker
+## 🐳 Conteinerização com Docker
 A aplicação é totalmente conteinerizável para facilitar a execução em qualquer ambiente.
 
 1. Build da imagem:
@@ -78,7 +78,7 @@ Isso criará e executará o serviço livraria definido no docker-compose.yml.
 
 Obs: A aplicação atual exige interação via terminal, portanto o container roda no modo interativo.
 
-##📝 Logs
+## 📝 Logs
 A aplicação imprime mensagens informativas no terminal para as seguintes ações:
 
 Sucesso ou erro na adição de livros
@@ -87,7 +87,7 @@ Validação de dados (por exemplo, páginas não inteiras ou data mal formatada)
 
 Feedback sobre exclusão ou atualizações 
 
-📂 Estrutura dos Arquivos
+## 📂 Estrutura dos Arquivos
 ```bash
 ├── livro.py              # Classes Livro e Livraria (CRUD + SQLite)
 ├── menu.py               # Interface via terminal com menu interativo
