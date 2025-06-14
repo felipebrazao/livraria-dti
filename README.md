@@ -78,7 +78,7 @@ docker build -t livraria-dti .
 ```
 2. Executar com Docker Compose:
 ```bash
-docker-compose up
+docker compose run --service-ports --rm web
 ```
 Isso criará e executará o serviço livraria definido no docker-compose.yml.
 
