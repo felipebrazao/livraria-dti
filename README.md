@@ -27,9 +27,11 @@ Conteinerização: Docker + Docker Compose
 ```bash
 git clone https://github.com/seu-usuario/livraria-dti.git
 cd livraria-dti
+```
 2. Instale as dependências:
 ```bash
 pip install -r requirements.txt
+```
 Apenas a biblioteca pytest é necessária para os testes. As demais dependências listadas no requirements.txt são genéricas para projetos web e não são utilizadas diretamente neste CLI.
 
 ## ▶️ Como Executar a Aplicação
@@ -37,6 +39,7 @@ Execute o menu interativo com:
 
 ```bash
 python menu.py
+```
 Funcionalidades disponíveis:
 Cadastrar livro: Solicita os campos obrigatórios e opcionais.
 
@@ -57,6 +60,7 @@ Para rodar os testes:
 ```bash
 pip install pytest
 pytest test_livro.py
+```
 Os testes cobrem:
 
 Adição, busca, atualização e remoção de livros
@@ -71,9 +75,11 @@ A aplicação é totalmente conteinerizável para facilitar a execução em qual
 1. Build da imagem:
 ```bash
 docker build -t livraria-dti .
+```
 2. Executar com Docker Compose:
 ```bash
 docker-compose up
+```
 Isso criará e executará o serviço livraria definido no docker-compose.yml.
 
 Obs: A aplicação atual exige interação via terminal, portanto o container roda no modo interativo.
@@ -96,3 +102,4 @@ Feedback sobre exclusão ou atualizações
 ├── Dockerfile            # Instruções para criar a imagem Docker
 ├── docker-compose.yml    # Configuração do serviço com Docker Compose
 ├── requirements.txt      # Lista de dependências
+```
